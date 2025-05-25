@@ -15,7 +15,7 @@ with st.sidebar:
     st.page_link("pages/03_Posts_Redes_Sociais.py", label="Posts para Redes Sociais", icon="📱")
     st.page_link("pages/04_Resumos.py", label="Resumidor de Conteúdos", icon="✂️")
     st.divider()
-    st.page_link("pages/05_Meus_Conteúdos.py", label="Meus Conteúdos", icon="📚")
+    st.page_link("pages/05_Meus_Conteudos.py", label="Meus Conteúdos", icon="📚")
 
 # --- Main Page Content (Dashboard) ---
 
