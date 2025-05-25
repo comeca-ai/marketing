@@ -1,0 +1,3 @@
+streamlit
+pandas
+# fpdf2 # For PDF export functionality (to be implemented)

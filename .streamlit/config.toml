@@ -1,0 +1,6 @@
+[theme]
+primaryColor="#6366F1" # Indigo-500 from Tailwind
+backgroundColor="#F3F4F6" # Cool Gray-100 from Tailwind
+secondaryBackgroundColor="#E5E7EB" # Cool Gray-200 from Tailwind
+textColor="#1F2937" # Cool Gray-800 from Tailwind
+font="sans serif" # Default sans serif, clean look
