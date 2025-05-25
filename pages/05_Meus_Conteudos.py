@@ -6,19 +6,9 @@ from utils.custom_css import apply_custom_css
 st.set_page_config(layout="wide", page_title="Meus Conteúdos")
 apply_custom_css()
 
-# --- Sidebar Navigation (copied for consistency) ---
-with st.sidebar:
-    st.title("📝 AI Content Suite") # Icon already here
-    st.page_link("app.py", label="Dashboard", icon="🏠")
-    st.header("Ferramentas") # This is a header, no direct icon parameter
-    st.page_link("pages/01_Artigos.py", label="Gerador de Artigos", icon="📄")
-    st.page_link("pages/02_Headlines.py", label="Gerador de Headlines", icon="💡")
-    st.page_link("pages/03_Posts_Redes_Sociais.py", label="Posts para Redes Sociais", icon="📱")
-    st.page_link("pages/04_Resumos.py", label="Resumidor de Conteúdos", icon="✂️")
-    st.divider()
-    st.page_link("pages/05_Meus_Conteudos.py", label="Meus Conteúdos", icon="📚")
-
 st.title("📚 Meus Conteúdos Gerados") # Icon already here
+st.page_link("app.py", label="⬅️ Voltar ao Dashboard", icon="🏠")
+st.markdown("---") # Optional divider
 st.markdown("Aqui você pode visualizar, gerenciar e exportar os conteúdos que você criou.")
 
 # --- Mock Data and Session State Management ---
@@ -74,14 +64,6 @@ else:
                 st.info("Funcionalidade de download em PDF ainda não implementada.")
         
         st.markdown("---")
-
-
-st.sidebar.markdown("---")
-st.sidebar.header("Opções de Exportação Global")
-if st.sidebar.button("Exportar Tudo como TXT (Em Breve)", use_container_width=True, disabled=True):
-    st.sidebar.info("Funcionalidade em desenvolvimento.")
-if st.sidebar.button("Exportar Tudo como PDF (Em Breve)", use_container_width=True, disabled=True):
-    st.sidebar.info("Funcionalidade em desenvolvimento.")
 
 # Note: A proper "Save content" mechanism should be added to the tool pages
 # to populate st.session_state.meus_conteudos. For now, it's pre-filled.

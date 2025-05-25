@@ -72,6 +72,10 @@ def apply_custom_css():
             color: #6B7280; /* Gray 500 */
         }
 
+        /* Hide Streamlit's default sidebar */
+        div[data-testid="stSidebar"] {
+            display: none;
+        }
     </style>
     """
     st.markdown(custom_css, unsafe_allow_html=True)

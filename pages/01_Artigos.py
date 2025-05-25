@@ -5,20 +5,10 @@ import time # Import time for simulating delay
 st.set_page_config(layout="wide", page_title="Gerador de Artigos")
 apply_custom_css()
 
-# --- Sidebar Navigation ---
-with st.sidebar:
-    st.title("📝 AI Content Suite")
-    st.page_link("app.py", label="Dashboard", icon="🏠")
-    st.header("Ferramentas")
-    st.page_link("pages/01_Artigos.py", label="Gerador de Artigos", icon="📄")
-    st.page_link("pages/02_Headlines.py", label="Gerador de Headlines", icon="💡")
-    st.page_link("pages/03_Posts_Redes_Sociais.py", label="Posts para Redes Sociais", icon="📱")
-    st.page_link("pages/04_Resumos.py", label="Resumidor de Conteúdos", icon="✂️")
-    st.divider()
-    st.page_link("pages/05_Meus_Conteudos.py", label="Meus Conteúdos", icon="📚")
-
 # --- Page Content ---
 st.title("📄 Gerador de Artigos")
+st.page_link("app.py", label="⬅️ Voltar ao Dashboard", icon="🏠") # ADD THIS LINE
+st.markdown("---") # Optional divider
 st.markdown("Descreva o tema ou as palavras-chave sobre as quais você deseja gerar um artigo completo.")
 
 # Initialize session state

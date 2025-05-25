@@ -1,68 +1,58 @@
 import streamlit as st
-from utils.custom_css import apply_custom_css # Import the function
+from utils.custom_css import apply_custom_css
 
-# Page Configuration
-st.set_page_config(layout="wide", page_title="AI Content Tools", initial_sidebar_state="expanded")
-apply_custom_css() # Apply CSS
-
-# --- Sidebar Navigation ---
-with st.sidebar:
-    st.title("📝 AI Content Suite") # Icon already here
-    st.page_link("app.py", label="Dashboard", icon="🏠")
-    st.header("Ferramentas") # This is a header, not a page link, no direct icon parameter
-    st.page_link("pages/01_Artigos.py", label="Gerador de Artigos", icon="📄")
-    st.page_link("pages/02_Headlines.py", label="Gerador de Headlines", icon="💡")
-    st.page_link("pages/03_Posts_Redes_Sociais.py", label="Posts para Redes Sociais", icon="📱")
-    st.page_link("pages/04_Resumos.py", label="Resumidor de Conteúdos", icon="✂️")
-    st.divider()
-    st.page_link("pages/05_Meus_Conteudos.py", label="Meus Conteúdos", icon="📚")
+st.set_page_config(layout="wide", page_title="AI Content Tools") # Removed initial_sidebar_state
+apply_custom_css()
 
 # --- Main Page Content (Dashboard) ---
-
-# Personalized Greeting (Placeholder)
-# TODO: Replace with actual user name if login is implemented
-st.title("🚀 Bem-vindo(a) de volta!") # Icon already here
+st.title("🚀 Bem-vindo(a) de volta!")
 st.markdown("Seu assistente de criação de conteúdo com Inteligência Artificial está pronto para ajudar.")
 st.markdown("---")
 
-st.header("✨ Ferramentas Mais Populares") # Icon already here
-st.markdown("Acesse rapidamente nossas ferramentas mais usadas e comece a criar.")
+st.header("✨ Ferramentas Principais e Conteúdos") # Updated header
+st.markdown("Acesse rapidamente nossas ferramentas e seus conteúdos salvos.")
 
-# Tool cards
-# Using columns for layout
-cols = st.columns(4) 
+# --- Cards Layout ---
+# Row 1: Three tools
+cols_row1 = st.columns(3)
 
-# Card 1: Gerador de Artigos
-with cols[0]:
+with cols_row1[0]:
     with st.container(border=True):
-        st.subheader("📄 Gerador de Artigos") # Icon already here
+        st.subheader("📄 Gerador de Artigos")
         st.caption("Crie artigos completos e otimizados sobre qualquer tema em segundos.")
         if st.button("Acessar Gerador de Artigos", key="btn_artigos", use_container_width=True):
-            st.switch_page("pages/01_Artigos.py") # Navigate to the page
+            st.switch_page("pages/01_Artigos.py")
 
-# Card 2: Gerador de Headlines
-with cols[1]:
+with cols_row1[1]:
     with st.container(border=True):
-        st.subheader("💡 Gerador de Headlines") # Icon already here
+        st.subheader("💡 Gerador de Headlines")
         st.caption("Gere headlines persuasivas e criativas para seus textos e anúncios.")
         if st.button("Acessar Gerador de Headlines", key="btn_headlines", use_container_width=True):
             st.switch_page("pages/02_Headlines.py")
 
-# Card 3: Criador de Posts para Redes Sociais
-with cols[2]:
+with cols_row1[2]:
     with st.container(border=True):
-        st.subheader("📱 Posts para Redes Sociais") # Icon already here
+        st.subheader("📱 Posts para Redes Sociais")
         st.caption("Crie posts engajadores para diversas plataformas de mídia social.")
         if st.button("Acessar Criador de Posts", key="btn_posts", use_container_width=True):
             st.switch_page("pages/03_Posts_Redes_Sociais.py")
 
-# Card 4: Resumidor de Conteúdos
-with cols[3]:
+# Row 2: One tool and Meus Conteudos
+cols_row2 = st.columns(2) # Or st.columnsSpec to make them more centered if desired
+
+with cols_row2[0]:
     with st.container(border=True):
-        st.subheader("✂️ Resumidor de Conteúdos") # Icon already here
+        st.subheader("✂️ Resumidor de Conteúdos")
         st.caption("Resuma textos longos, artigos ou documentos de forma rápida e precisa.")
         if st.button("Acessar Resumidor", key="btn_resumos", use_container_width=True):
             st.switch_page("pages/04_Resumos.py")
 
+with cols_row2[1]:
+    with st.container(border=True):
+        st.subheader("📚 Meus Conteúdos") # New Card
+        st.caption("Acesse e gerencie todos os seus conteúdos criados anteriormente.")
+        if st.button("Acessar Meus Conteúdos", key="btn_meus_conteudos", use_container_width=True):
+            st.switch_page("pages/05_Meus_Conteudos.py") # Ensure this path is correct
+
 st.markdown("---")
-st.markdown("Explore todas as ferramentas no menu à esquerda e potencialize sua produtividade!")
+st.markdown("Escolha uma opção acima para começar.") # Updated footer text
