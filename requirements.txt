@@ -1,3 +1,6 @@
 streamlit
 pandas
+requests
+beautifulsoup4
+# google-api-python-client # For future PageSpeed Insights integration
 # fpdf2 # For PDF export functionality (to be implemented)

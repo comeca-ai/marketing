@@ -54,5 +54,16 @@ with cols_row2[1]:
         if st.button("Acessar Meus Conteúdos", key="btn_meus_conteudos", use_container_width=True):
             st.switch_page("pages/05_Meus_Conteudos.py") # Ensure this path is correct
 
+# Row 3: New Tool - Site Analysis
+cols_row3 = st.columns(3) # Match the layout of row 1 for consistency, even with one item
+
+with cols_row3[0]: # Place it in the first column, it will appear centered if it's the only one in a 'columns(3)'
+    with st.container(border=True):
+        st.subheader("🤖 Análise de Sites para LLMs")
+        st.caption("Avalie seu site para otimização em buscadores de Inteligência Artificial.")
+        if st.button("Analisar Site", key="btn_analise_ia", use_container_width=True):
+            st.switch_page("pages/06_Analise_IA_Sites.py")
+
+
 st.markdown("---")
 st.markdown("Escolha uma opção acima para começar.") # Updated footer text
